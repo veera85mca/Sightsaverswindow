@@ -1,0 +1,469 @@
+<html>
+<head>
+<title>TestNG:  Test(failed)</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test(failed)</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/7</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Sep 05 16:17:17 IST 2018</td>
+</tr>
+<tr><td>Total time:</td><td>0 seconds (933 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.closereport()'><b>closereport</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.closereport(Patienttestcase.java:227)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1606286799", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1606286799'><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.closereport(Patienttestcase.java:227)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@6500df86</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.closereport()'><b>closereport</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase</td>
+<td></td>
+<td>0</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@6500df86</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.closereport()'><b>closereport</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase</td>
+<td></td>
+<td>0</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@6500df86</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.closereport()'><b>closereport</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase</td>
+<td></td>
+<td>0</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@6500df86</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.closereport()'><b>closereport</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase</td>
+<td></td>
+<td>0</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@6500df86</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.closereport()'><b>closereport</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase</td>
+<td></td>
+<td>0</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@6500df86</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.closereport()'><b>closereport</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase</td>
+<td></td>
+<td>0</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@6500df86</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.closereport()'><b>closereport</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase</td>
+<td></td>
+<td>0</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@6500df86</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.patientregistration()'><b>patientregistration</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Right eye Un-aided near=N8, Address=E3/414, RAJ NAGAR, ADAMBAKKAM, Use Glass=NA, Gender=Male, Left eye aided near=N8, Type of vehicle=Bus, Right Colour=Normal, Driving experience=7, Wear Glass=NA, Right eye aided near=N8, Glass Right near cyl=-, Not Emplyeed=Mar, License no=123456797, Lens Type=-, Right eye un-aided Distance=6/9, Patient Name=ESAN, Refer for=Glaucoma, BMI Weight=45, BP Systolic=100, UID=DEL-003, Aadhaar no=785698632522, Type of route=Combinations, Glass Right near v/a=-, Caste=BC, Glass Right distance sph=-, Frame Size=-, Glass Left near axis=-, Salary calculated=Daily, Do you want refer=Yes, Right pinhole=6/9, Type of Coating=-, Glass Right Distance axis=-, Left pinhole=6/9, BMI Height=172, Near by hospital=NA, Glass Right near sph=-, Monthly Income=5000-10000, Glass Left Distance cyl=-, Alter Skills=No, Occupation=Driver, Glass Left distance sph=-, Mobile no=7845488305, Glass Left near v/a=-, Traffic light Colors=NA, Left eye un-aided distance=6/9, Distance Object=NA, Alcohol=NA, Glass collected at the point=-, Smoke=NA, Glass Right near axis=-, Glass Left near cyl=-, Screen response code=B - Screening negative but Symptomatic, Non working months=Others, Left Colour=Normal, Education=Higher Sec., Months employed=2, Glass Left near sph=-, Eye examin=NA, Taluk=TALUK3, Refer To=Hospital, Know about camp=Other drivers, Happy way=Null, Glass Right Distance cyl=-, Happy profession=Not Happy, Left eye aided distance=6/9, State=Tamil Nadu, Financial support=No, Amount paid=-, District=Chennai, Road accident 12 Months=NA, Glass Left Distance v/a=-, Right eye aided Distance=6/9, Blood Sugar=450, Glass Right Distance v/a=-, Diabeties=NA, Road accident=NA, First aid kit=No, Holding back amount=100, Others specify=Null, Alter employment=No, Frame code=-, Glass Left Distance axis=-, Renewal year=2019, Age=48, Vehicle insurance=Yes, Night driving=NA, Hypertension=NA, Health insurance=No, Renewal month=03, Medical checkup=NA, Distance driving=NA, Glass Collecting point=-, Treatment for refraction=Bi-focal, Payment Type=-, Left eye Un-aided near=N8, Life insurance=Yes, Type of hospital=Null}</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.patientregistration(Patienttestcase.java:61)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1348453796", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1348453796'><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.patientregistration(Patienttestcase.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@6500df86</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.patientregistration()'><b>patientregistration</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Right eye Un-aided near=N8, Address=E3/414, RAJ NAGAR, ADAMBAKKAM, Use Glass=Yes, Gender=Male, Left eye aided near=N8, Type of vehicle=Car, Right Colour=Normal, Driving experience=Null, Wear Glass=Yes, Right eye aided near=N8, Glass Right near cyl=-6.25, Not Emplyeed=Apr, License no=123456790, Lens Type=None, Right eye un-aided Distance=-, Patient Name=RAM, Refer for=Diabetic Retinopathy, BMI Weight=52, BP Systolic=130, UID=DEL-004, Aadhaar no=785698632522, Type of route=Intrastate, Glass Right near v/a=N1, Caste=ST, Glass Right distance sph=-6.25, Frame Size=None, Glass Left near axis=20.0, Salary calculated=Per Trip, Do you want refer=Yes, Right pinhole=-, Type of Coating=None, Glass Right Distance axis=10.0, Left pinhole=-, BMI Height=179, Near by hospital=Yes, Glass Right near sph=-6.25, Monthly Income=3000-5000, Glass Left Distance cyl=-6.25, Alter Skills=NA, Occupation=Others, Glass Left distance sph=-6.25, Mobile no=7845488305, Glass Left near v/a=N1, Traffic light Colors=Null, Left eye un-aided distance=-, Distance Object=Yes, Alcohol=Yes, Glass collected at the point=Yes, Smoke=Yes, Glass Right near axis=20.0, Glass Left near cyl=-6.25, Screen response code=C - Only Distance vision problem, Non working months=Nothing, Left Colour=Normal, Education=Never went to school/cannot read, Months employed=9, Glass Left near sph=-6.25, Eye examin=Yes, Taluk=TALUK4, Refer To=Hospital, Know about camp=Project staff, Happy way=Adequate Freedom, Glass Right Distance cyl=-6.25, Happy profession=Happy, Left eye aided distance=-, State=Andhra Pradesh, Financial support=NA, Amount paid=None, District=Kurnool, Road accident 12 Months=Null, Glass Left Distance v/a=6/60, Right eye aided Distance=-, Blood Sugar=250, Glass Right Distance v/a=6/60, Diabeties=Yes, Road accident=Null, First aid kit=NA, Holding back amount=200, Others specify=Null, Alter employment=NA, Frame code=None, Glass Left Distance axis=20.0, Renewal year=2020, Age=19, Vehicle insurance=Null, Night driving=Null, Hypertension=Yes, Health insurance=Not Known, Renewal month=04, Medical checkup=Yes, Distance driving=Null, Glass Collecting point=GUINDY, Treatment for refraction=Distance, Payment Type=None, Left eye Un-aided near=N8, Life insurance=No, Type of hospital=Govt}</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.closereport(Patienttestcase.java:227)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1296456465", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1296456465'><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.closereport(Patienttestcase.java:227)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@6500df86</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.patientregistration()'><b>patientregistration</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Right eye Un-aided near=N8, Address=E3/414, RAJ NAGAR, ADAMBAKKAM, Use Glass=NA, Gender=Male, Left eye aided near=N8, Type of vehicle=Bus, Right Colour=-, Driving experience=Null, Wear Glass=NA, Right eye aided near=N8, Glass Right near cyl=-, Not Emplyeed=Jun, License no=123456792, Lens Type=-, Right eye un-aided Distance=6/9, Patient Name=SIVA, Refer for=Any Other, BMI Weight=61, BP Systolic=180, UID=DEL-006, Aadhaar no=785698632522, Type of route=within city, Glass Right near v/a=-, Caste=BC, Glass Right distance sph=-, Frame Size=-, Glass Left near axis=-, Salary calculated=Monthly, Do you want refer=Yes, Right pinhole=6/9, Type of Coating=-, Glass Right Distance axis=-, Left pinhole=6/9, BMI Height=179, Near by hospital=NA, Glass Right near sph=-, Monthly Income=>10000, Glass Left Distance cyl=-, Alter Skills=No, Occupation=Mechanic, Glass Left distance sph=-, Mobile no=7845488305, Glass Left near v/a=-, Traffic light Colors=Null, Left eye un-aided distance=6/9, Distance Object=NA, Alcohol=NA, Glass collected at the point=-, Smoke=NA, Glass Right near axis=-, Glass Left near cyl=-, Screen response code=E - Only Color vision problem, Non working months=Others, Left Colour=-, Education=Upper primary, Months employed=7, Glass Left near sph=-, Eye examin=NA, Taluk=TALUK6, Refer To=Hospital, Know about camp=Others, Happy way=Adequate Friends, Glass Right Distance cyl=-, Happy profession=Happy, Left eye aided distance=6/9, State=Jammu and Kashmir, Financial support=Yes, Amount paid=-, District=Kargil, Road accident 12 Months=Null, Glass Left Distance v/a=-, Right eye aided Distance=6/9, Blood Sugar=450, Glass Right Distance v/a=-, Diabeties=NA, Road accident=Null, First aid kit=No, Holding back amount=400, Others specify=Null, Alter employment=NA, Frame code=-, Glass Left Distance axis=-, Renewal year=2022, Age=38, Vehicle insurance=Null, Night driving=Null, Hypertension=NA, Health insurance=No, Renewal month=06, Medical checkup=NA, Distance driving=Null, Glass Collecting point=-, Treatment for refraction=Near, Payment Type=-, Left eye Un-aided near=N8, Life insurance=No, Type of hospital=Null}</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.closereport(Patienttestcase.java:227)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace854487022", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace854487022'><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.closereport(Patienttestcase.java:227)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@6500df86</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.patientregistration()'><b>patientregistration</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Right eye Un-aided near=-, Address=E3/414, RAJ NAGAR, ADAMBAKKAM, Use Glass=Yes, Gender=Female, Left eye aided near=-, Type of vehicle=Truck, Right Colour=Normal, Driving experience=Null, Wear Glass=Yes, Right eye aided near=-, Glass Right near cyl=-, Not Emplyeed=Jul, License no=123456794, Lens Type=None, Right eye un-aided Distance=-, Patient Name=KUMUTHA, Refer for=Null, BMI Weight=72, BP Systolic=160, UID=DEL-007, Aadhaar no=785698632522, Type of route=Others, Glass Right near v/a=N24, Caste=SC, Glass Right distance sph=>+6.00, Frame Size=None, Glass Left near axis=-, Salary calculated=Weekly, Do you want refer=No, Right pinhole=-, Type of Coating=None, Glass Right Distance axis=112.0, Left pinhole=-, BMI Height=168, Near by hospital=Yes, Glass Right near sph=-, Monthly Income=3000-5000, Glass Left Distance cyl=-, Alter Skills=NA, Occupation=Others, Glass Left distance sph=-, Mobile no=7845488305, Glass Left near v/a=N24, Traffic light Colors=Null, Left eye un-aided distance=-, Distance Object=Yes, Alcohol=Yes, Glass collected at the point=Yes, Smoke=Yes, Glass Right near axis=-, Glass Left near cyl=-, Screen response code=F - Both Distance and Near vision problem, Non working months=Nothing, Left Colour=Normal, Education=Higher Sec., Months employed=5, Glass Left near sph=-, Eye examin=Yes, Taluk=TALUK7, Refer To=Null, Know about camp=Other drivers, Happy way=Stable Employment, Glass Right Distance cyl=>+6.00, Happy profession=Happy, Left eye aided distance=-, State=Daman and Diu, Financial support=No, Amount paid=None, District=Diu, Road accident 12 Months=Null, Glass Left Distance v/a=1/60, Right eye aided Distance=-, Blood Sugar=500, Glass Right Distance v/a=6/6, Diabeties=Yes, Road accident=Null, First aid kit=NA, Holding back amount=600, Others specify=Null, Alter employment=Yes, Frame code=None, Glass Left Distance axis=159.0, Renewal year=2023, Age=68, Vehicle insurance=Null, Night driving=Null, Hypertension=Yes, Health insurance=Not Known, Renewal month=07, Medical checkup=Yes, Distance driving=Null, Glass Collecting point=GUINDY, Treatment for refraction=Bi-focal, Payment Type=None, Left eye Un-aided near=-, Life insurance=No, Type of hospital=NGO}</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.closereport(Patienttestcase.java:227)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace842179210", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace842179210'><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.closereport(Patienttestcase.java:227)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@6500df86</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.patientregistration()'><b>patientregistration</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Right eye Un-aided near=N8, Address=E3/414, RAJ NAGAR, ADAMBAKKAM, Use Glass=No, Gender=Male, Left eye aided near=N8, Type of vehicle=Car, Right Colour=-, Driving experience=Null, Wear Glass=No, Right eye aided near=N8, Glass Right near cyl=0.0, Not Emplyeed=Aug, License no=123456795, Lens Type=None, Right eye un-aided Distance=-, Patient Name=UVA, Refer for=Null, BMI Weight=82, BP Systolic=150, UID=DEL-008, Aadhaar no=785698632522, Type of route=Interstate, Glass Right near v/a=-, Caste=ST, Glass Right distance sph=<-6.00, Frame Size=None, Glass Left near axis=-, Salary calculated=Daily, Do you want refer=No, Right pinhole=-, Type of Coating=None, Glass Right Distance axis=151.0, Left pinhole=-, BMI Height=160, Near by hospital=No, Glass Right near sph=-, Monthly Income=5000-10000, Glass Left Distance cyl=<-6.00, Alter Skills=Yes, Occupation=Cleaner, Glass Left distance sph=-, Mobile no=7845488305, Glass Left near v/a=N24, Traffic light Colors=Null, Left eye un-aided distance=-, Distance Object=No, Alcohol=No, Glass collected at the point=Yes, Smoke=No, Glass Right near axis=168.0, Glass Left near cyl=+2.25, Screen response code=G - Both Distance and Color vision problem, Non working months=Take Up Other Work, Left Colour=-, Education=Graduation, Months employed=4, Glass Left near sph=+5.25, Eye examin=No, Taluk=TALUK8, Refer To=Null, Know about camp=Project staff, Happy way=Null, Glass Right Distance cyl=-, Happy profession=Somewhat Happy, Left eye aided distance=-, State=Madhya Pradesh, Financial support=No, Amount paid=None, District=Bhopal, Road accident 12 Months=Null, Glass Left Distance v/a=No PL, Right eye aided Distance=-, Blood Sugar=550, Glass Right Distance v/a=No PL, Diabeties=No, Road accident=Null, First aid kit=Yes, Holding back amount=700, Others specify=Null, Alter employment=NA, Frame code=None, Glass Left Distance axis=-, Renewal year=2024, Age=78, Vehicle insurance=Null, Night driving=Null, Hypertension=No, Health insurance=Yes, Renewal month=08, Medical checkup=No, Distance driving=Null, Glass Collecting point=GUINDY, Treatment for refraction=Distance, Payment Type=None, Left eye Un-aided near=N8, Life insurance=Yes, Type of hospital=Null}</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.closereport(Patienttestcase.java:227)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace686989583", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace686989583'><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.closereport(Patienttestcase.java:227)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@6500df86</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.patientregistration()'><b>patientregistration</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Right eye Un-aided near=-, Address=E3/414, RAJ NAGAR, ADAMBAKKAM, Use Glass=NA, Gender=Male, Left eye aided near=-, Type of vehicle=Jeep, Right Colour=-, Driving experience=Null, Wear Glass=NA, Right eye aided near=-, Glass Right near cyl=-1.25, Not Emplyeed=Sep, License no=123456796, Lens Type=None, Right eye un-aided Distance=6/9, Patient Name=NARAYANA, Refer for=Null, BMI Weight=93, BP Systolic=130, UID=DEL-009, Aadhaar no=785698632522, Type of route=within city, Glass Right near v/a=N24, Caste=OBC, Glass Right distance sph=-, Frame Size=None, Glass Left near axis=169.0, Salary calculated=Per Trip, Do you want refer=No, Right pinhole=6/9, Type of Coating=None, Glass Right Distance axis=-, Left pinhole=6/9, BMI Height=162, Near by hospital=NA, Glass Right near sph=+1.25, Monthly Income=>10000, Glass Left Distance cyl=+1.75, Alter Skills=NA, Occupation=Mechanic, Glass Left distance sph=+1.0, Mobile no=7845488305, Glass Left near v/a=N24, Traffic light Colors=Null, Left eye un-aided distance=6/9, Distance Object=NA, Alcohol=NA, Glass collected at the point=Yes, Smoke=NA, Glass Right near axis=178.0, Glass Left near cyl=-, Screen response code=H - Both Near and Color vision problem, Non working months=Others, Left Colour=-, Education=PG, Months employed=3, Glass Left near sph=-, Eye examin=NA, Taluk=TALUK9, Refer To=Null, Know about camp=Poster or Pamphlet, Happy way=Null, Glass Right Distance cyl=-, Happy profession=Not Happy, Left eye aided distance=6/9, State=Maharashtra, Financial support=Yes, Amount paid=None, District=Mumbai City, Road accident 12 Months=Null, Glass Left Distance v/a=-, Right eye aided Distance=6/9, Blood Sugar=570, Glass Right Distance v/a=-, Diabeties=NA, Road accident=Null, First aid kit=No, Holding back amount=800, Others specify=Null, Alter employment=No, Frame code=None, Glass Left Distance axis=35.0, Renewal year=2025, Age=88, Vehicle insurance=Null, Night driving=Null, Hypertension=NA, Health insurance=No, Renewal month=09, Medical checkup=NA, Distance driving=Null, Glass Collecting point=GUINDY, Treatment for refraction=Near, Payment Type=None, Left eye Un-aided near=-, Life insurance=No, Type of hospital=Null}</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.closereport(Patienttestcase.java:227)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2146338580", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2146338580'><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.closereport(Patienttestcase.java:227)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@6500df86</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.patientregistration()'><b>patientregistration</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Right eye Un-aided near=-, Address=E3/414, RAJ NAGAR, ADAMBAKKAM, Use Glass=Yes, Gender=Female, Left eye aided near=-, Type of vehicle=Cabs/Taxis, Right Colour=-, Driving experience=Null, Wear Glass=Yes, Right eye aided near=-, Glass Right near cyl=-, Not Emplyeed=Oct, License no=123456798, Lens Type=-, Right eye un-aided Distance=-, Patient Name=PRIYA, Refer for=-, BMI Weight=109, BP Systolic=135, UID=DEL-010, Aadhaar no=785698632522, Type of route=Others, Glass Right near v/a=-, Caste=General, Glass Right distance sph=-, Frame Size=-, Glass Left near axis=-, Salary calculated=Distance, Do you want refer=-, Right pinhole=-, Type of Coating=-, Glass Right Distance axis=-, Left pinhole=-, BMI Height=163, Near by hospital=Yes, Glass Right near sph=-, Monthly Income=>10000, Glass Left Distance cyl=-, Alter Skills=No, Occupation=Others, Glass Left distance sph=-, Mobile no=7845488305, Glass Left near v/a=-, Traffic light Colors=Null, Left eye un-aided distance=-, Distance Object=Yes, Alcohol=Yes, Glass collected at the point=-, Smoke=Yes, Glass Right near axis=-, Glass Left near cyl=-, Screen response code=A - Screening negative Asymptomatic, Non working months=Nothing, Left Colour=-, Education=Diploma/ITI, Months employed=1, Glass Left near sph=-, Eye examin=Yes, Taluk=TALUK10, Refer To=-, Know about camp=Others, Happy way=Null, Glass Right Distance cyl=-, Happy profession=Somewhat Happy, Left eye aided distance=-, State=Telangana, Financial support=NA, Amount paid=-, District=Medak, Road accident 12 Months=Null, Glass Left Distance v/a=-, Right eye aided Distance=-, Blood Sugar=600, Glass Right Distance v/a=-, Diabeties=Yes, Road accident=Null, First aid kit=NA, Holding back amount=900, Others specify=Null, Alter employment=Yes, Frame code=-, Glass Left Distance axis=-, Renewal year=2026, Age=98, Vehicle insurance=Null, Night driving=Null, Hypertension=Yes, Health insurance=Not Known, Renewal month=10, Medical checkup=Yes, Distance driving=Null, Glass Collecting point=-, Treatment for refraction=-, Payment Type=-, Left eye Un-aided near=-, Life insurance=Yes, Type of hospital=Others}</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.closereport(Patienttestcase.java:227)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace730923082", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace730923082'><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.closereport(Patienttestcase.java:227)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@6500df86</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.patientregistration()'><b>patientregistration</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Right eye Un-aided near=N8, Address=E3/414, RAJ NAGAR, ADAMBAKKAM, Use Glass=Yes, Gender=Male, Left eye aided near=N8, Type of vehicle=Cabs/Taxis, Right Colour=-, Driving experience=Null, Wear Glass=Yes, Right eye aided near=N8, Glass Right near cyl=-, Not Emplyeed=Nov, License no=123456798, Lens Type=-, Right eye un-aided Distance=6/9, Patient Name=RAJ, Refer for=Any Other, BMI Weight=45, BP Systolic=85, UID=DEL-011, Aadhaar no=785698632522, Type of route=Others, Glass Right near v/a=-, Caste=General, Glass Right distance sph=-, Frame Size=-, Glass Left near axis=-, Salary calculated=Per Trip, Do you want refer=Yes, Right pinhole=6/9, Type of Coating=-, Glass Right Distance axis=-, Left pinhole=6/9, BMI Height=172, Near by hospital=Yes, Glass Right near sph=-, Monthly Income=>10000, Glass Left Distance cyl=-, Alter Skills=No, Occupation=Others, Glass Left distance sph=-, Mobile no=7845488305, Glass Left near v/a=-, Traffic light Colors=Null, Left eye un-aided distance=6/9, Distance Object=Yes, Alcohol=Yes, Glass collected at the point=-, Smoke=Yes, Glass Right near axis=-, Glass Left near cyl=-, Screen response code=E - Only Color vision problem, Non working months=Take Up Other Work, Left Colour=-, Education=Others, Months employed=11, Glass Left near sph=-, Eye examin=Yes, Taluk=TALUK11, Refer To=Hospital, Know about camp=Others, Happy way=Null, Glass Right Distance cyl=-, Happy profession=Somewhat Happy, Left eye aided distance=6/9, State=Chandigarh, Financial support=NA, Amount paid=-, District=Chandigarh, Road accident 12 Months=Null, Glass Left Distance v/a=-, Right eye aided Distance=6/9, Blood Sugar=450, Glass Right Distance v/a=-, Diabeties=Yes, Road accident=Null, First aid kit=NA, Holding back amount=1000, Others specify=SELF, Alter employment=Yes, Frame code=-, Glass Left Distance axis=-, Renewal year=2027, Age=58, Vehicle insurance=Null, Night driving=Null, Hypertension=Yes, Health insurance=Not Known, Renewal month=11, Medical checkup=Yes, Distance driving=Null, Glass Collecting point=-, Treatment for refraction=Near, Payment Type=-, Left eye Un-aided near=N8, Life insurance=Yes, Type of hospital=Others}</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.closereport(Patienttestcase.java:227)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace379478400", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace379478400'><pre>java.lang.NullPointerException
+	at com.pellu.sight.patientinfo.Patienttestcase.closereport(Patienttestcase.java:227)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@6500df86</td></tr>
+</table><p>
+</body>
+</html>

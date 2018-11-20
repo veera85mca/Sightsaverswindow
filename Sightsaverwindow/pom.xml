@@ -24,16 +24,18 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
+  <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
-    <version>6.10</version>
+    <version>6.14.3</version>
     <scope>test</scope>
-	</dependency>
-	<dependency>
+</dependency>
+	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>3.4.0</version>
+    <version>3.11.0</version>
 </dependency>
 <dependency>
     <groupId>io.appium</groupId>

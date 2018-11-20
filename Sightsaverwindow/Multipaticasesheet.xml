@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Multitab concept">
+<listeners>
+<listener class-name="com.pellu.sight.screenshot.Listener"/>
+</listeners>
+<parameter name="patientregis" value="Casesheet"/>
+  <test name="Patient casesheet">
+    <classes>
+      <class name="com.pellu.sight.patientinfo.Patienttestcase">
+      <methods>
+      <include name="initialization"/>
+      <include name="login"/>
+      <include name="campdetailscreen"/>
+      <exclude name="patientregistration"/>
+      <exclude name="multipatientregistration"/>
+      <include name="multipatientcasesheet"/>
+      <exclude name="multipatientglass"/>
+      </methods>
+      </class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

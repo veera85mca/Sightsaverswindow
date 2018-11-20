@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Multi tab concept]">
+  <parameter name="patientregis" value="Glass prescription"/>
+  <listeners>
+    <listener class-name="com.pellu.sight.screenshot.Listener"/>
+  </listeners>
+  <test thread-count="5" name="Glass prescription(failed)">
+    <classes>
+      <class name="com.pellu.sight.patientinfo.Patienttestcase">
+        <methods>
+          <include name="multipatientglass" invocation-numbers="2 3 4 5 6 7 8 9 10"/>
+          <include name="closereport"/>
+        </methods>
+      </class> <!-- com.pellu.sight.patientinfo.Patienttestcase -->
+    </classes>
+  </test> <!-- Glass prescription(failed) -->
+</suite> <!-- Failed suite [Multi tab concept] -->

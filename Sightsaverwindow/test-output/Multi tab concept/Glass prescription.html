@@ -1,0 +1,751 @@
+<html>
+<head>
+<title>TestNG:  Glass prescription</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Glass prescription</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>5/9/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Sep 19 13:01:32 IST 2018</td>
+</tr>
+<tr><td>Total time:</td><td>770 seconds (770270 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.multipatientglass()'><b>multipatientglass</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Glass Left near axis=-, Glass Right Distance v/a=6/6, Glass collected at the point=Yes, Glass Right near axis=-, Glass Left near cyl=-, Type of Coating=None, Glass Right Distance axis=112.0, Frame code=None, Glass Left Distance axis=159.0, Glass Left near sph=-, Glass Right near cyl=-, Glass Right near sph=-, Lens Type=None, Glass Left Distance cyl=-, Glass Collecting point=GUINDY, UID=DEL-002, Glass Right Distance cyl=>+6.00, Payment Type=None, Glass Left distance sph=-, Amount paid=None, Glass Right near v/a=N24, Glass Left near v/a=N24, Glass Right distance sph=>+6.00, Glass Left Distance v/a=1/60, Frame Size=None}</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appActivity: md52d7fde6ba0664a6789700d1c..., appPackage: Sightsavers.Sightsavers, databaseEnabled: false, desired: {appActivity: md52d7fde6ba0664a6789700d1c..., appPackage: Sightsavers.Sightsavers, deviceName: Lenova PB1-750M, platformName: android, platformVersion: 6.0.1}, deviceManufacturer: LENOVO, deviceModel: Lenovo PB1-750M, deviceName: bb15ee52, deviceScreenSize: 720x1280, deviceUDID: bb15ee52, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, platform: LINUX, platformName: LINUX, platformVersion: 6.0.1, takesScreenshot: true, warnings: {}, webStorageEnabled: false}
+Session ID: ab5c85e3-d45f-4397-ae94-7f4f9f31fed0
+*** Element info: {Using=-android uiautomator, value=new UiScrollable(new UiSelector().className(&quot;android.widget.ListView&quot;)).scrollIntoView(new UiSelector().text(&quot;6/6&quot;))}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:129)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.FindsByAndroidUIAutomator.findElementByAndroidUIAutomator(FindsByAndroidUIAutomator.java:38)
+	at io.appium.java_client.MobileBy$ByAndroidUIAutomator.findElement(MobileBy.java:236)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at com.pellu.sight.patientinfopage.Patienttestpage.scrollbyelementlistland(Patienttestpage.java:970)
+	at com.pellu.sight.patientinfopage.Patienttestpage.Glass_rightdistance_va(Patienttestpage.java:683)
+	at com.pellu.sight.patientinfo.Patienttestcase.screenglassvalues(Patienttestcase.java:213)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:115)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1690481990", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1690481990'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appActivity: md52d7fde6ba0664a6789700d1c..., appPackage: Sightsavers.Sightsavers, databaseEnabled: false, desired: {appActivity: md52d7fde6ba0664a6789700d1c..., appPackage: Sightsavers.Sightsavers, deviceName: Lenova PB1-750M, platformName: android, platformVersion: 6.0.1}, deviceManufacturer: LENOVO, deviceModel: Lenovo PB1-750M, deviceName: bb15ee52, deviceScreenSize: 720x1280, deviceUDID: bb15ee52, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, platform: LINUX, platformName: LINUX, platformVersion: 6.0.1, takesScreenshot: true, warnings: {}, webStorageEnabled: false}
+Session ID: ab5c85e3-d45f-4397-ae94-7f4f9f31fed0
+*** Element info: {Using=-android uiautomator, value=new UiScrollable(new UiSelector().className(&quot;android.widget.ListView&quot;)).scrollIntoView(new UiSelector().text(&quot;6/6&quot;))}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:129)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.FindsByAndroidUIAutomator.findElementByAndroidUIAutomator(FindsByAndroidUIAutomator.java:38)
+	at io.appium.java_client.MobileBy$ByAndroidUIAutomator.findElement(MobileBy.java:236)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at com.pellu.sight.patientinfopage.Patienttestpage.scrollbyelementlistland(Patienttestpage.java:970)
+	at com.pellu.sight.patientinfopage.Patienttestpage.Glass_rightdistance_va(Patienttestpage.java:683)
+	at com.pellu.sight.patientinfo.Patienttestcase.screenglassvalues(Patienttestcase.java:213)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:115)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>63</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@1e397ed7</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.multipatientglass()'><b>multipatientglass</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Glass Left near axis=-, Glass Right Distance v/a=No PL, Glass collected at the point=Yes, Glass Right near axis=168.0, Glass Left near cyl=+2.25, Type of Coating=None, Glass Right Distance axis=151.0, Frame code=None, Glass Left Distance axis=-, Glass Left near sph=+5.25, Glass Right near cyl=0.0, Glass Right near sph=-, Lens Type=None, Glass Left Distance cyl=<-6.00, Glass Collecting point=GUINDY, UID=DEL-003, Glass Right Distance cyl=-, Payment Type=None, Glass Left distance sph=-, Amount paid=None, Glass Right near v/a=-, Glass Left near v/a=N24, Glass Right distance sph=<-6.00, Glass Left Distance v/a=No PL, Frame Size=None}</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: android.widget.ImageButton (tried for 35 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.pellu.sight.patientinfopage.Patienttestpage.multi_worklistglass(Patienttestpage.java:837)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:113)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.className: android.widget.ImageButton
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 27 more
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace896852376", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace896852376'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: android.widget.ImageButton (tried for 35 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.pellu.sight.patientinfopage.Patienttestpage.multi_worklistglass(Patienttestpage.java:837)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.className: android.widget.ImageButton
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 27 more
+</pre></div></td>
+<td>41</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@1e397ed7</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.multipatientglass()'><b>multipatientglass</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Glass Left near axis=20.0, Glass Right Distance v/a=6/60, Glass collected at the point=Yes, Glass Right near axis=20.0, Glass Left near cyl=-6.25, Type of Coating=None, Glass Right Distance axis=10.0, Frame code=None, Glass Left Distance axis=20.0, Glass Left near sph=-6.25, Glass Right near cyl=-6.25, Glass Right near sph=-6.25, Lens Type=None, Glass Left Distance cyl=-6.25, Glass Collecting point=GUINDY, UID=DEL-004, Glass Right Distance cyl=-6.25, Payment Type=None, Glass Left distance sph=-6.25, Amount paid=None, Glass Right near v/a=N1, Glass Left near v/a=N1, Glass Right distance sph=-6.25, Glass Left Distance v/a=6/60, Frame Size=None}</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: android.widget.ImageButton (tried for 35 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.pellu.sight.patientinfopage.Patienttestpage.multi_worklistglass(Patienttestpage.java:837)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:113)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.className: android.widget.ImageButton
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 27 more
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace237297104", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace237297104'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: android.widget.ImageButton (tried for 35 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.pellu.sight.patientinfopage.Patienttestpage.multi_worklistglass(Patienttestpage.java:837)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.className: android.widget.ImageButton
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 27 more
+</pre></div></td>
+<td>40</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@1e397ed7</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.multipatientglass()'><b>multipatientglass</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Glass Left near axis=-, Glass Right Distance v/a=6/6, Glass collected at the point=Yes, Glass Right near axis=-, Glass Left near cyl=-, Type of Coating=None, Glass Right Distance axis=112.0, Frame code=None, Glass Left Distance axis=159.0, Glass Left near sph=-, Glass Right near cyl=-, Glass Right near sph=-, Lens Type=None, Glass Left Distance cyl=-, Glass Collecting point=GUINDY, UID=DEL-006, Glass Right Distance cyl=>+6.00, Payment Type=None, Glass Left distance sph=-, Amount paid=None, Glass Right near v/a=N24, Glass Left near v/a=N24, Glass Right distance sph=>+6.00, Glass Left Distance v/a=1/60, Frame Size=None}</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: android.widget.ImageButton (tried for 35 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.pellu.sight.patientinfopage.Patienttestpage.multi_worklistglass(Patienttestpage.java:837)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:113)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.className: android.widget.ImageButton
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 27 more
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace32393008", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace32393008'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: android.widget.ImageButton (tried for 35 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.pellu.sight.patientinfopage.Patienttestpage.multi_worklistglass(Patienttestpage.java:837)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.className: android.widget.ImageButton
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 27 more
+</pre></div></td>
+<td>40</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@1e397ed7</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.multipatientglass()'><b>multipatientglass</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Glass Left near axis=-, Glass Right Distance v/a=No PL, Glass collected at the point=Yes, Glass Right near axis=168.0, Glass Left near cyl=+2.25, Type of Coating=None, Glass Right Distance axis=151.0, Frame code=None, Glass Left Distance axis=-, Glass Left near sph=+5.25, Glass Right near cyl=0.0, Glass Right near sph=-, Lens Type=None, Glass Left Distance cyl=<-6.00, Glass Collecting point=GUINDY, UID=DEL-007, Glass Right Distance cyl=-, Payment Type=None, Glass Left distance sph=-, Amount paid=None, Glass Right near v/a=-, Glass Left near v/a=N24, Glass Right distance sph=<-6.00, Glass Left Distance v/a=No PL, Frame Size=None}</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: android.widget.ImageButton (tried for 35 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.pellu.sight.patientinfopage.Patienttestpage.multi_worklistglass(Patienttestpage.java:837)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:113)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.className: android.widget.ImageButton
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 27 more
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1890287843", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1890287843'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: android.widget.ImageButton (tried for 35 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.pellu.sight.patientinfopage.Patienttestpage.multi_worklistglass(Patienttestpage.java:837)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.className: android.widget.ImageButton
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 27 more
+</pre></div></td>
+<td>40</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@1e397ed7</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.multipatientglass()'><b>multipatientglass</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Glass Left near axis=-, Glass Right Distance v/a=No PL, Glass collected at the point=Yes, Glass Right near axis=168.0, Glass Left near cyl=+2.25, Type of Coating=None, Glass Right Distance axis=151.0, Frame code=None, Glass Left Distance axis=-, Glass Left near sph=+5.25, Glass Right near cyl=0.0, Glass Right near sph=-, Lens Type=None, Glass Left Distance cyl=<-6.00, Glass Collecting point=GUINDY, UID=DEL-008, Glass Right Distance cyl=-, Payment Type=None, Glass Left distance sph=-, Amount paid=None, Glass Right near v/a=-, Glass Left near v/a=N24, Glass Right distance sph=<-6.00, Glass Left Distance v/a=No PL, Frame Size=None}</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: android.widget.ImageButton (tried for 35 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.pellu.sight.patientinfopage.Patienttestpage.multi_worklistglass(Patienttestpage.java:837)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:113)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.className: android.widget.ImageButton
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 27 more
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1029898472", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1029898472'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: android.widget.ImageButton (tried for 35 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.pellu.sight.patientinfopage.Patienttestpage.multi_worklistglass(Patienttestpage.java:837)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.className: android.widget.ImageButton
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 27 more
+</pre></div></td>
+<td>41</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@1e397ed7</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.multipatientglass()'><b>multipatientglass</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Glass Left near axis=169.0, Glass Right Distance v/a=-, Glass collected at the point=Yes, Glass Right near axis=178.0, Glass Left near cyl=-, Type of Coating=None, Glass Right Distance axis=-, Frame code=None, Glass Left Distance axis=35.0, Glass Left near sph=-, Glass Right near cyl=-1.25, Glass Right near sph=+1.25, Lens Type=None, Glass Left Distance cyl=+1.75, Glass Collecting point=GUINDY, UID=DEL-009, Glass Right Distance cyl=-, Payment Type=None, Glass Left distance sph=+1.0, Amount paid=None, Glass Right near v/a=N24, Glass Left near v/a=N24, Glass Right distance sph=-, Glass Left Distance v/a=-, Frame Size=None}</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: android.widget.ImageButton (tried for 35 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.pellu.sight.patientinfopage.Patienttestpage.multi_worklistglass(Patienttestpage.java:837)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:113)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.className: android.widget.ImageButton
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 27 more
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2142893855", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2142893855'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: android.widget.ImageButton (tried for 35 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.pellu.sight.patientinfopage.Patienttestpage.multi_worklistglass(Patienttestpage.java:837)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.className: android.widget.ImageButton
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 27 more
+</pre></div></td>
+<td>41</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@1e397ed7</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.multipatientglass()'><b>multipatientglass</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Glass Left near axis=169.0, Glass Right Distance v/a=-, Glass collected at the point=Yes, Glass Right near axis=178.0, Glass Left near cyl=-, Type of Coating=None, Glass Right Distance axis=-, Frame code=None, Glass Left Distance axis=35.0, Glass Left near sph=-, Glass Right near cyl=-1.25, Glass Right near sph=+1.25, Lens Type=None, Glass Left Distance cyl=+1.75, Glass Collecting point=GUINDY, UID=DEL-010, Glass Right Distance cyl=-, Payment Type=None, Glass Left distance sph=+1.0, Amount paid=None, Glass Right near v/a=N24, Glass Left near v/a=N24, Glass Right distance sph=-, Glass Left Distance v/a=-, Frame Size=None}</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: android.widget.ImageButton (tried for 35 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.pellu.sight.patientinfopage.Patienttestpage.multi_worklistglass(Patienttestpage.java:837)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:113)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.className: android.widget.ImageButton
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 27 more
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace609887969", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace609887969'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: android.widget.ImageButton (tried for 35 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.pellu.sight.patientinfopage.Patienttestpage.multi_worklistglass(Patienttestpage.java:837)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.className: android.widget.ImageButton
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 27 more
+</pre></div></td>
+<td>41</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@1e397ed7</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.multipatientglass()'><b>multipatientglass</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Glass Left near axis=169.0, Glass Right Distance v/a=-, Glass collected at the point=Yes, Glass Right near axis=178.0, Glass Left near cyl=-, Type of Coating=None, Glass Right Distance axis=-, Frame code=None, Glass Left Distance axis=35.0, Glass Left near sph=-, Glass Right near cyl=-1.25, Glass Right near sph=+1.25, Lens Type=None, Glass Left Distance cyl=+1.75, Glass Collecting point=GUINDY, UID=DEL-011, Glass Right Distance cyl=-, Payment Type=None, Glass Left distance sph=+1.0, Amount paid=None, Glass Right near v/a=N24, Glass Left near v/a=N24, Glass Right distance sph=-, Glass Left Distance v/a=-, Frame Size=None}</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: android.widget.ImageButton (tried for 35 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.pellu.sight.patientinfopage.Patienttestpage.multi_worklistglass(Patienttestpage.java:837)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:113)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.className: android.widget.ImageButton
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 27 more
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1746257394", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1746257394'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: android.widget.ImageButton (tried for 35 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.pellu.sight.patientinfopage.Patienttestpage.multi_worklistglass(Patienttestpage.java:837)
+	at com.pellu.sight.patientinfo.Patienttestcase.multipatientglass(Patienttestcase.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.className: android.widget.ImageButton
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-KPGOHHF&apos;, ip: &apos;192.168.195.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 27 more
+</pre></div></td>
+<td>41</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@1e397ed7</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.campdetailscreen()'><b>campdetailscreen</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: Camp, guindy, 19-Sep-2018, No, None, None</td>
+<td></td>
+<td>30</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@1e397ed7</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.initialization()'><b>initialization</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: Glass prescription</td>
+<td></td>
+<td>24</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@1e397ed7</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.login()'><b>login</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: samauto@node.in, password, 192.168.0.199</td>
+<td></td>
+<td>28</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@1e397ed7</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.multipatientglass()'><b>multipatientglass</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Glass Left near axis=180.0, Glass Right Distance v/a=FCF, Glass collected at the point=Yes, Glass Right near axis=180.0, Glass Left near cyl=+6.25, Type of Coating=None, Glass Right Distance axis=180.0, Frame code=None, Glass Left Distance axis=180.0, Glass Left near sph=+6.25, Glass Right near cyl=+6.25, Glass Right near sph=+6.25, Lens Type=None, Glass Left Distance cyl=+6.25, Glass Collecting point=GUINDY, UID=DEL-005, Glass Right Distance cyl=+6.25, Payment Type=None, Glass Left distance sph=+6.25, Amount paid=None, Glass Right near v/a=N36, Glass Left near v/a=N36, Glass Right distance sph=+6.25, Glass Left Distance v/a=FCF, Frame Size=None}</td>
+<td></td>
+<td>145</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@1e397ed7</td></tr>
+<tr>
+<td title='com.pellu.sight.patientinfo.Patienttestcase.multipatientglass()'><b>multipatientglass</b><br>Test class: com.pellu.sight.patientinfo.Patienttestcase<br>Parameters: {Glass Left near axis=20.0, Glass Right Distance v/a=6/60, Glass collected at the point=Yes, Glass Right near axis=20.0, Glass Left near cyl=-6.25, Type of Coating=None, Glass Right Distance axis=10.0, Frame code=None, Glass Left Distance axis=20.0, Glass Left near sph=-6.25, Glass Right near cyl=-6.25, Glass Right near sph=-6.25, Lens Type=None, Glass Left Distance cyl=-6.25, Glass Collecting point=GUINDY, UID=DEL-001, Glass Right Distance cyl=-6.25, Payment Type=None, Glass Left distance sph=-6.25, Amount paid=None, Glass Right near v/a=N1, Glass Left near v/a=N1, Glass Right distance sph=-6.25, Glass Left Distance v/a=6/60, Frame Size=None}</td>
+<td></td>
+<td>136</td>
+<td>com.pellu.sight.patientinfo.Patienttestcase@1e397ed7</td></tr>
+</table><p>
+</body>
+</html>

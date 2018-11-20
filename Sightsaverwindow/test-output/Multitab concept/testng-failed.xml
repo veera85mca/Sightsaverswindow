@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Multitab concept]">
+  <parameter name="patientregis" value="Casesheet"/>
+  <listeners>
+    <listener class-name="com.pellu.sight.screenshot.Listener"/>
+  </listeners>
+  <test thread-count="5" name="Patient casesheet(failed)">
+    <classes>
+      <class name="com.pellu.sight.patientinfo.Patienttestcase">
+        <methods>
+          <include name="closereport"/>
+          <include name="multipatientcasesheet" invocation-numbers="8"/>
+        </methods>
+      </class> <!-- com.pellu.sight.patientinfo.Patienttestcase -->
+    </classes>
+  </test> <!-- Patient casesheet(failed) -->
+</suite> <!-- Failed suite [Multitab concept] -->

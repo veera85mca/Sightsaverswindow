@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
-
 import org.apache.poi.hwpf.usermodel.Table;
 import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.By;
@@ -16,19 +15,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.internal.TouchAction;
 import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
-
 import com.pellu.sight.initialize.Driverinitialize;
 import com.relevantcodes.extentreports.LogStatus;
 
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.touch.offset.PointOption;
@@ -45,8 +43,11 @@ public static String screencode;
 private static int bmiweight;
 private static double bmiheight;
 private static double bmiresultvalue;
-private static String vaxpath1="//android.widget.Spinner[@resource-id='PellucidCampManagement.PellucidCampManagement:id/";
+private static String vaxpath1="//android.widget.Spinner[@resource-id='Sightsavers.Sightsavers:id/";
 private static String vaxpath2="']//android.widget.TextView[@index='0']";
+private static String patientjob;
+private static String roadacc;
+private static String education;
 
 
 public static void login_user(String user) throws IOException
@@ -57,15 +58,15 @@ public static void login_user(String user) throws IOException
 }
 public static void login_pass(String pass)
 {
-	driver.hideKeyboard();
+	hidekey();
 	getidlocator("Sight_Login_password").sendKeys(pass);
 }
 public static void login_provider(String provider)
 {
-	driver.hideKeyboard();
+	hidekey();
 	getidlocator("Sight_Login_provider").clear();
 	getidlocator("Sight_Login_provider").sendKeys(provider);
-	driver.hideKeyboard();
+	hidekey();
 	getidlocator("Sight_Login_Loginbutton").click();
 }
 public static void campdetail_modeltype(String modeltype)
@@ -102,7 +103,10 @@ public static void campdetail_Remarks(String postponed, String postdate, String 
 	driver.findElement(By.className("android.widget.ImageButton")).click();
 	scrollbyelement("android.widget.FrameLayout", "Settings");
 	driver.findElement(By.xpath("//android.widget.CheckedTextView[@text='Settings']")).click();
+	if(!getidlocator("Sight_Menu_setting_UIDmanual_check").isSelected())
+	{
 	getidlocator("Sight_Menu_setting_UIDmanual_check").click();
+	}
 	getidlocator("Sight_Menu_setting_Save").click();
 }
 public static void worklistregistration()
@@ -148,7 +152,7 @@ public static void patientaddress(String address)
 public static void patientstate(String state) throws InterruptedException
 {
 	asser=new SoftAssert();
-	driver.hideKeyboard();
+	hidekey();
 	//scrollbyelement(scrollclasswindow, "Educational Qualification");
 	//WebElement ele=getidlocator("Camp_worklist_Patient_registration_state");
 	String[] sta=state.split("\\s+"); 
@@ -171,7 +175,7 @@ public static void patientstate(String state) throws InterruptedException
 }
 public static void patientdistrict(String district) throws InterruptedException
 {
-	driver.hideKeyboard();
+	hidekey();
 	String[] dis=district.split("\\s+");
 	getidlocator("Sight_worklist_Patient_registration_district").sendKeys(dis[0]);
 	Thread.sleep(2000);
@@ -187,24 +191,22 @@ public static void patientdistrict(String district) throws InterruptedException
 public static void patienttaluk(String taluk)
 {
 	getidlocator("Sight_worklist_Patient_registration_taluk").sendKeys(taluk);
-	driver.hideKeyboard();
+	hidekey();
 }
 public static void patientaadhar(String aadhar)
 {
 	getidlocator("Sight_worklist_Patient_registration_aadhar").sendKeys(aadhar);
-	driver.hideKeyboard();
+	hidekey();
 }
 public static void patientlicenseno(String licenseno)
 {
 	getidlocator("Sight_worklist_Patient_registration_license").sendKeys(licenseno);
-	driver.hideKeyboard();
+	hidekey();
 }
 public static void patientrenewalmonth(String month) throws InterruptedException
 {
 	getidlocator("Sight_worklist_Patient_registration_Month").click();
-	System.out.println(month);
-	dropdown(month);
-	//scrollbyelementlist(listviewloca, month);
+	scrollbyelementlist(listviewloca, month);
 }
 public static void patientrenewalyear(String year)
 {
@@ -213,6 +215,7 @@ public static void patientrenewalyear(String year)
 }
 public static void patientjob(String job, String years)
 {
+	patientjob=job;
 	getidlocator("Sight_worklist_Patient_registration_job").click();
 	dropdown(job);
 	if(job.equalsIgnoreCase("Driver"))
@@ -222,10 +225,11 @@ public static void patientjob(String job, String years)
 }
 public static void patienteducationquali(String studies, String others)
 {
-	driver.hideKeyboard();
+	education=studies;
 	getidlocator("Sight_worklist_Patient_registration_education").click();
-	dropdown(studies);
-	//scrollbyelementlist(listviewloca, studies);
+	String scrollcontain="new UiSelector().className(\""+listviewloca+"\")";
+	String scrollele="new UiSelector().textContains(\""+studies+"\")";
+	driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable("+scrollcontain+").scrollIntoView("+scrollele+")")).click();
 	if(studies.equalsIgnoreCase("Others"))
 	{
 		getidlocator("Sight_worklist_Patient_registration_education_others").sendKeys(others);
@@ -234,7 +238,7 @@ public static void patienteducationquali(String studies, String others)
 public static void patientmonthsemployee(String month)
 {
 	getidlocator("Sight_worklist_Patient_registration_monthsemployee").sendKeys(month);
-	driver.hideKeyboard();
+	hidekey();
 }
 public static void patienttypevehicle(String vehicle)
 {
@@ -255,10 +259,17 @@ public static void patientincome(String income)
 {
 	getidlocator("Sight_worklist_Patient_registration_income").click();
 	dropdown(income);
+	if(patientjob.equalsIgnoreCase("driver") || education.equalsIgnoreCase("Never went to school/can read") || education.equalsIgnoreCase("Never went to school/cannot read") || education.equalsIgnoreCase("Others"))
+	{
+		scrollbyelement(scrollclasswindow, "Save and Proceed");
+	}
 }
 public static void patientvehicleinsur(String vehicleinsur)
 {
+	if(patientjob.equalsIgnoreCase("driver"))
+	{
 	radiobutton(getidlocator("Sight_worklist_Patient_registration_vehicleinsurance_yes"), getidlocator("Sight_worklist_Patient_registration_vehicleinsurance_no"), vehicleinsur, "vehicleinsurence: ");
+	}
 }
 public static void patientlifeinsur(String lifeinsur)
 {
@@ -266,7 +277,6 @@ public static void patientlifeinsur(String lifeinsur)
 }
 public static void patienthealthinsur(String healthinsur)
 {
-	scrollbyelement(scrollclasswindow, "Save and Proceed");
 	getidlocator("Sight_worklist_Patient_registration_healthinsurance").click();
 	dropdown(healthinsur);
 }
@@ -283,6 +293,32 @@ public static void patientinfo_save()
 
 
 
+//medical examination details
+public static void mediexam_bpSystolic(String bpsystolic)
+{
+	getidlocator("Sight_medicalexamination_bloodpressure_Systolic").sendKeys(bpsystolic);
+	hidekey();
+}
+public static void mediexam_bloodsugar(String sugar)
+{
+	getidlocator("Sight_medicalexamination_bloodsugar").sendKeys(sugar);
+	hidekey();
+}
+public static void BMIweight(String weight)
+{
+	bmiweight=Integer.parseInt(weight);
+	getidlocator("Sight_BMI_Weight").sendKeys(weight);
+	hidekey();
+}
+public static void BMIheight(String height)
+{
+	bmiheight=Double.parseDouble(height);
+	getidlocator("Sight_BMI_Height").sendKeys(height);
+	hidekey();
+	String scrollcontain="new UiSelector().className(\""+scrollclasswindow+"\")";
+	String scrollele="new UiSelector().resourceIdMatches(\"Sightsavers.Sightsavers:id/txt_ScreeningResponseCode\")";
+	driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable("+scrollcontain+").scrollIntoView("+scrollele+")"));	
+}
 
 //Screening test details
 public static void screenresponse(String responsecode)
@@ -290,371 +326,478 @@ public static void screenresponse(String responsecode)
 screencode=responsecode;
 switch (responsecode) {
 case "A - Screening negative Asymptomatic":
-	getidlocator("Camp_Screenresponsecode_A").click();
+	getidlocator("Sight_Screenresponsecode_A").click();
 	break;
 case "B - Screening negative but Symptomatic":
-	getidlocator("Camp_Screenresponsecode_B").click();
+	getidlocator("Sight_Screenresponsecode_B").click();
 	break;
 case "C - Only Distance vision problem":
-	getidlocator("Camp_Screenresponsecode_C").click();
+	getidlocator("Sight_Screenresponsecode_C").click();
 	break;
 case "D - Only Near vision problem":
-	getidlocator("Camp_Screenresponsecode_D").click();
+	getidlocator("Sight_Screenresponsecode_D").click();
 	break;
 case "E - Only Color vision problem":
-	getidlocator("Camp_Screenresponsecode_E").click();
+	getidlocator("Sight_Screenresponsecode_E").click();
 	break;
 case "F - Both Distance and Near vision problem":
-	getidlocator("Camp_Screenresponsecode_F").click();
+	getidlocator("Sight_Screenresponsecode_F").click();
 	break;
 case "G - Both Distance and Color vision problem":
-	getidlocator("Camp_Screenresponsecode_G").click();
+	getidlocator("Sight_Screenresponsecode_G").click();
 	break;
 case "H - Both Near and Color vision problem":
-	getidlocator("Camp_Screenresponsecode_H").click();
+	getidlocator("Sight_Screenresponsecode_H").click();
 	break;
 }
-}
-public static void general1_medicalcheckup(String general1)
+String scrollcontain="new UiSelector().className(\""+scrollclasswindow+"\")";
+String scrollele="new UiSelector().resourceIdMatches(\"Sightsavers.Sightsavers:id/LL_MIQuestions\")";
+driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable("+scrollcontain+").scrollIntoView("+scrollele+")"));	
+
+/*	if(!getidlocator("Sight_Screen_Monthlyincome_familysupportearn_Text").isDisplayed())
 {
-	radiobutton(getidlocator("Camp_Screening_general_medicalcheckup_Yes"), getidlocator("Camp_Screening_general_medicalcheckup_No"), general1, "medicalcheckup: ");
+	String scrollcontain2="new UiSelector().className(\""+scrollclasswindow+"\")";
+	String scrollele2="new UiSelector().resourceIdMatches(\"Sightsavers.Sightsavers:id/rdo_CodeA\")";
+	driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable("+scrollcontain2+").scrollIntoView("+scrollele2+")"));
+	
+	String scrollcontain1="new UiSelector().className(\""+scrollclasswindow+"\")";
+	String scrollele1="new UiSelector().resourceIdMatches(\"Sightsavers.Sightsavers:id/LL_MIQuestions\")";
+	driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable("+scrollcontain1+").scrollIntoView("+scrollele1+")"));
+}*/
+
+}
+
+
+//Monthly Income Questions
+public static void Monthlyquestions_salarycalculate(String salary)
+{
+	getidlocator("Sight_Screen_Monthlyincome_salarycalcualted").click();
+	dropdown(salary);
+}
+public static void Monthlyquestions_holdbackamount(String amount)
+{
+	getidlocator("Sight_Screen_Monthlyincome_holdbackamount").sendKeys(amount);
+	hidekey();
+}
+public static void Monthlyquestions_notemplyeemonth(String month)
+{
+	getidlocator("Sight_Screen_Monthlyincome_notemployee_month").click();
+	dropdown(month);
+}
+public static void Monthlyquestions_nonworkingmonth(String month)
+{
+	getidlocator("Sight_Screen_Monthlyincome_nonworking_month").click();
+	dropdown(month);
+}
+public static void Monthlyquestions_alteremplyee(String alteremp)
+{
+	radiobuttonNA(getidlocator("Sight_Screen_Monthlyincome_alteremployee_Yes"), getidlocator("Sight_Screen_Monthlyincome_alteremployee_No"), getidlocator("Sight_Screen_Monthlyincome_alteremployee_NA"), alteremp, "Alteremployee: ");
+}
+public static void Monthlyquestions_alterskill(String skill)
+{
+	radiobuttonNA(getidlocator("Sight_Screen_Monthlyincome_alterskills_Yes"), getidlocator("Sight_Screen_Monthlyincome_alterskills_No"), getidlocator("Sight_Screen_Monthlyincome_alterskills_NA"), skill, "Alterskill: ");
+}
+public static void Monthlyquestions_earnsupport(String earnsupport)
+{
+	radiobuttonNA(getidlocator("Sight_Screen_Monthlyincome_familysupportearn_Yes"), getidlocator("Sight_Screen_Monthlyincome_familysupportearn_No"), getidlocator("Sight_Screen_Monthlyincome_familysupportearn_NA"), earnsupport, "Familysupportearn: ");
+	if(patientjob.equalsIgnoreCase("driver"))
+	{
+	String scrollcontain="new UiSelector().className(\""+scrollclasswindow+"\")";
+	String scrollele="new UiSelector().resourceId(\"Sightsavers.Sightsavers:id/txt_judgingdistances\")";
+	driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable("+scrollcontain+").scrollIntoView("+scrollele+")"));
+	}else {
+		String scrollcontain="new UiSelector().className(\""+scrollclasswindow+"\")";
+		String scrollele="new UiSelector().resourceId(\"Sightsavers.Sightsavers:id/txtView_DistantObjects\")";
+		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable("+scrollcontain+").scrollIntoView("+scrollele+")"));		
+	}
+}
+
+
+
+//General Questions
+public static void general1_medicalcheckup(String general1) throws InterruptedException
+{
+	radiobuttonNA(getidlocator("Sight_Screening_general_medicalcheckup_Yes"), getidlocator("Sight_Screening_general_medicalcheckup_No"), getidlocator("Sight_Screening_general_medicalcheckup_NA"), general1, "medicalcheckup: ");
 }
 public static void general2_diabetes(String general2)
 {
-	radiobutton(getidlocator("Camp_Screening_general_diabetes_Yes"), getidlocator("Camp_Screening_general_diabetes_No"), general2, "diabetes: ");
+	radiobuttonNA(getidlocator("Sight_Screening_general_diabetes_Yes"), getidlocator("Sight_Screening_general_diabetes_No"), getidlocator("Sight_Screening_general_diabetes_NA"), general2, "diabetes: ");
 }
 public static void general3_hypertention(String general3)
 {
-	radiobutton(getidlocator("Camp_Screening_general_hypertension_Yes"), getidlocator("Camp_Screening_general_hypertension_No"), general3, "hypertention: ");
+	radiobuttonNA(getidlocator("Sight_Screening_general_hypertension_Yes"), getidlocator("Sight_Screening_general_hypertension_No"), getidlocator("Sight_Screening_general_hypertension_NA"), general3, "hypertention: ");
 }
 public static void general4_smoke(String general4)
 {
-	scrollbyelement(scrollclasswindow, "Save");
-	getidlocator("Camp_Screening_general_smoke_Text").click();
-	radiobutton(getidlocator("Camp_Screening_general_smoke_Yes"), getidlocator("Camp_Screening_general_smoke_No"), general4, "smoke: ");
+	radiobuttonNA(getidlocator("Sight_Screening_general_smoke_Yes"), getidlocator("Sight_Screening_general_smoke_No"), getidlocator("Sight_Screening_general_smoke_NA"), general4, "smoke: ");
 }
 public static void general5_alcohol(String general5)
 {
-	getidlocator("Camp_Screening_general_alcohol_Text").click();
-	radiobutton(getidlocator("Camp_Screening_general_alcohol_Yes"), getidlocator("Camp_Screening_general_alcohol_No"), general5, "alcohol: ");
+	radiobuttonNA(getidlocator("Sight_Screening_general_alcohol_Yes"), getidlocator("Sight_Screening_general_alcohol_No"), getidlocator("Sight_Screening_general_alcohol_NA"), general5, "alcohol: ");
 }
 public static void general6_eyeexamin(String general6)
 {
-
-	radiobutton(getidlocator("Camp_Screening_general_eyeexamination_Yes"), getidlocator("Camp_Screening_general_eyeexamination_No"), general6, "eyeexamin: ");
+	radiobuttonNA(getidlocator("Sight_Screening_general_eyeexamination_Yes"), getidlocator("Sight_Screening_general_eyeexamination_No"), getidlocator("Sight_Screening_general_eyeexamination_NA"), general6, "eyeexamin: ");
 }
 public static void general7_distanceobject(String general7)
 {
-
-	radiobutton(getidlocator("Camp_Screening_general_distantobjects_Yes"), getidlocator("Camp_Screening_general_distantobjects_No"), general7, "distanceobject: ");
+	radiobuttonNA(getidlocator("Sight_Screening_general_distantobjects_Yes"), getidlocator("Sight_Screening_general_distantobjects_No"), getidlocator("Sight_Screening_general_distantobjects_NA"), general7, "distanceobject: ");
 }
-public static void general8_wearglasses(String general8)
+public static void general8_distancedriving(String general8)
 {
-
-	radiobutton(getidlocator("Camp_Screening_general_wearglasses_Yes"), getidlocator("Camp_Screening_general_wearglasses_No"), general8, "wearglasses: ");
-}
-public static void general9_useglasses(String general9)
-{
-
-	radiobutton(getidlocator("Camp_Screening_general_useglasses_Yes"), getidlocator("Camp_Screening_general_useglasses_No"), general9, "useglasses: ");
-}
-public static void general10_nearhospital(String general10, String general11)
-{
-
-	radiobutton(getidlocator("Camp_Screening_general_nearhospital_Yes"), getidlocator("Camp_Screening_general_nearhospital_No"), general10, "nearhospital: ");
-	if(general10.equalsIgnoreCase("yes"))
+	if(patientjob.equalsIgnoreCase("driver"))
 	{
-		switch (general11) {
+	radiobuttonNA(getidlocator("Sight_Screening_general_distancedriving_Yes"), getidlocator("Sight_Screening_general_distancedriving_No"), getidlocator("Sight_Screening_general_distancedriving_NA"), general8, "distancedriving: ");
+	}
+}
+public static void general9_trafficlightcolors(String general9) throws InterruptedException
+{
+	if(patientjob.equalsIgnoreCase("driver"))
+	{
+	String scrollcontain="new UiSelector().className(\""+scrollclasswindow+"\")";
+	String scrollele="new UiSelector().resourceId(\"Sightsavers.Sightsavers:id/rdb_Govt\")";
+	driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable("+scrollcontain+").scrollIntoView("+scrollele+")"));
+	Thread.sleep(2000);
+	radiobuttonNA(getidlocator("Sight_Screening_general_trafficlightcolors_Yes"), getidlocator("Sight_Screening_general_trafficlightcolors_No"), getidlocator("Sight_Screening_general_trafficlightcolors_NA"), general9, "trafficlightcolors: ");
+	}
+}
+public static void general10_nightdriving(String general10)
+{
+	if(patientjob.equalsIgnoreCase("driver"))
+	{
+	radiobuttonNA(getidlocator("Sight_Screening_general_nightdriving_Yes"), getidlocator("Sight_Screening_general_nightdriving_No"), getidlocator("Sight_Screening_general_nightdriving_NA"), general10, "trafficlightcolors: ");
+	}
+}
+public static void general11_wearglasses(String general11)
+{
+	if(patientjob.equalsIgnoreCase("driver"))
+	{
+		radiobuttonNA(getidlocator("Sight_Screening_general_wearglasses_Yes"), getidlocator("Sight_Screening_general_wearglasses_No"), getidlocator("Sight_Screening_general_wearglasses_NA"), general11, "wearglasses: ");
+	}else {
+		String scrollclass="new UiSelector().className(\""+scrollclasswindow+"\")";
+		String scrollele="new UiSelector().resourceId(\"Sightsavers.Sightsavers:id/btn_ScreeningSave\")";
+		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable("+scrollclass+").scrollIntoView("+scrollele+")"));
+		radiobuttonNA(getidlocator("Sight_Screening_general_wearglasses_Yes"), getidlocator("Sight_Screening_general_wearglasses_No"), getidlocator("Sight_Screening_general_wearglasses_NA"), general11, "wearglasses: ");
+	}
+}
+public static void general12_useglasses(String general12)
+{
+	radiobuttonNA(getidlocator("Sight_Screening_general_useglasses_Yes"), getidlocator("Sight_Screening_general_useglasses_No"), getidlocator("Sight_Screening_general_useglasses_NA"), general12, "useglasses: ");
+}
+public static void general13_nearhospital(String general13, String general14)
+{
+	radiobuttonNA(getidlocator("Sight_Screening_general_nearhospital_Yes"), getidlocator("Sight_Screening_general_nearhospital_No"), getidlocator("Sight_Screening_general_nearhospital_NA"), general13, "nearhospital: ");
+	if(general13.equalsIgnoreCase("yes"))
+	{
+		switch (general14) {
 		case "Govt":
-			getidlocator("Camp_Screening_general_typehospital_govt").click();
+			getidlocator("Sight_Screening_general_typehospital_govt").click();
 			break;
 		case "Pvt":
-			getidlocator("Camp_Screening_general_typehospital_private").click();
+			getidlocator("Sight_Screening_general_typehospital_private").click();
 			break;
 		case "NGO":
-			getidlocator("Camp_Screening_general_typehospital_ngo").click();
+			getidlocator("Sight_Screening_general_typehospital_ngo").click();
 			break;
 		case "Others":
-			getidlocator("Camp_Screening_general_typehospital_others").click();
+			getidlocator("Sight_Screening_general_typehospital_others").click();
 			break;
 		}
 	}
 }
+public static void general14_roadaccident(String accident, String twelvemonths)
+{
+	if(patientjob.equalsIgnoreCase("driver"))
+	{
+	radiobuttonNA(getidlocator("Sight_Screening_general_involoveroadaccident_Yes"), getidlocator("Sight_Screening_general_involoveroadaccident_No"), getidlocator("Sight_Screening_general_involoveroadaccident_Decline"), accident, "Roadaccident: ");
+	if(accident.equalsIgnoreCase("Yes"))
+	{
+		radiobuttonNA(getidlocator("Sight_Screening_general_roadaccident_twelvemonths_Yes"), getidlocator("Sight_Screening_general_roadaccident_twelvemonths_No"), getidlocator("Sight_Screening_general_roadaccident_twelvemonths_NA"), twelvemonths, "Twelve Months: ");
+	}
+	String scrollclass="new UiSelector().className(\""+scrollclasswindow+"\")";
+	String scrollele="new UiSelector().resourceId(\"Sightsavers.Sightsavers:id/btn_ScreeningSave\")";
+	driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable("+scrollclass+").scrollIntoView("+scrollele+")"));
+	}
+}
+public static void general15_firstaidkit(String firstaidkit) throws InterruptedException
+{
+	//driver.findElement(By.id("Sightsavers.Sightsavers:id/txt_FirstAid")).click();
+	WebDriverWait wait=new WebDriverWait(driver, 15);
+	wait.until(ExpectedConditions.elementToBeClickable(getidlocator("Sight_Screening_general_Firstaidkit_truck_Yes")));
+	WebDriverWait wait1=new WebDriverWait(driver, 15);
+	wait1.until(ExpectedConditions.elementToBeClickable(getidlocator("Sight_Screening_general_Firstaidkit_truck_No")));
+	WebDriverWait wait2=new WebDriverWait(driver, 15);
+	wait2.until(ExpectedConditions.elementToBeClickable(getidlocator("Sight_Screening_general_Firstaidkit_truck_NA")));
+	radiobuttonNA(getidlocator("Sight_Screening_general_Firstaidkit_truck_Yes"), getidlocator("Sight_Screening_general_Firstaidkit_truck_No"), getidlocator("Sight_Screening_general_Firstaidkit_truck_NA"), firstaidkit, "Firstaidkit: ");
+}
+public static void general16_happyprofession(String happy, String happyway)
+{
+	if(happy.equalsIgnoreCase("Happy"))
+	{
+		getidlocator("Sight_Screening_general_happyprofession_happy").click();
+		switch (happyway) {
+		case "Adequate Income":
+			getidlocator("Sight_Screening_general_happyway_Adequateincome").click();
+			break;
+		case "Adequate Freedom":
+			getidlocator("Sight_Screening_general_happyway_Adequatefreedom").click();
+			break;
+		case "Visiting Places":
+			getidlocator("Sight_Screening_general_happyway_visitingplaces").click();
+			break;
+		case "Adequate Friends":
+			getidlocator("Sight_Screening_general_happyway_Adequatefriends").click();
+			break;
+		case "Stable Employment":
+			getidlocator("Sight_Screening_general_happyway_stableemployment").click();
+			break;
+		}
+	}else if (happy.equalsIgnoreCase("Somewhat Happy")) {
+		getidlocator("Sight_Screening_general_happyprofession_somewhathappy").click();
+	}else if (happy.equalsIgnoreCase("Not Happy")) {
+		getidlocator("Sight_Screening_general_happyprofession_nothappy").click();
+	}
+}
 public static void screeninfo_save()
 {
-	getidlocator("Camp_Screening_save").click();
+	getidlocator("Sight_Screening_save").click();
 }
-//medical examination details
-public static void mediexam_bpSystolic(String bpsystolic) throws InterruptedException
-{
-	Thread.sleep(3000);
-	WebDriverWait wait=new WebDriverWait(driver, 30);
-	wait.until(ExpectedConditions.visibilityOf(getidlocator("Camp_medicalexamination_bloodpressure_Systolic")));
-	getidlocator("Camp_medicalexamination_bloodpressure_Systolic").sendKeys(bpsystolic);
-}
-public static void mediexam_bpDiastolic(String bpdiastolic)
-{
-	getidlocator("Camp_medicalexamination_bloodpressure_Diastolic").sendKeys(bpdiastolic);
-}
-public static void mediexam_bloodsugar(String sugar)
-{
-	getidlocator("Camp_medicalexamination_bloodsugar").sendKeys(sugar);
-}
-public static void mediexam_syringing(String syring)
-{
-	radiobutton(getidlocator("Camp_medicalexamination_Syringing_yes"), getidlocator("Camp_medicalexamination_Syringing_no"), syring, "syringing: ");
-}
-public static void BMIweight(String weight)
-{
-	bmiweight=Integer.parseInt(weight);
-	getidlocator("Camp_BMI_Weight").sendKeys(weight);
-}
-public static void BMIheight(String height)
-{
-	bmiheight=Double.parseDouble(height);
-	getidlocator("Camp_BMI_Height").sendKeys(height);
-}
-public static void BMIresult()
-{
-	WebDriverWait wait=new WebDriverWait(driver, 15);
-	wait.until(ExpectedConditions.visibilityOf(getidlocator("Camp_BMI_Result_value")));
-	double d=Math.pow(bmiheight/100, 2);
-	double n=bmiweight/d;
-	double res=(double)Math.round(n*100)/100;
-	bmiresultvalue=Double.parseDouble(getidlocator("Camp_BMI_Result_value").getText());
-	System.out.println("result: "+res+" actual: "+bmiresultvalue);
-	asser.assertEquals(bmiresultvalue, res);
-	
-	WebDriverWait wait1=new WebDriverWait(driver, 15);
-	wait1.until(ExpectedConditions.visibilityOf(getidlocator("Camp_BMI_Result_text")));
-	System.out.println("BMI get Text: "+getidlocator("Camp_BMI_Result_text").getText()+"BMI Value of text: "+BMInametext());
-	asser.assertEquals(getidlocator("Camp_BMI_Result_text").getText(), BMInametext());
-}
-public static void Intracularpressure_rightiop(String riop)
-{
-	getidlocator("Camp_BMI_Weight_Text").click();
-	getidlocator("Camp_Intracular_pressure_righteye_IOP").sendKeys(riop);
-}
-public static void Intracularpressure_leftiop(String liop) throws InterruptedException
-{
-	getidlocator("Camp_Intracular_pressure_lefteye_IOP").sendKeys(liop);
-	getidlocator("Camp_BMI_Weight_Text").click();	
-}
-public static void medicalinfo_save()
-{
-	getidlocator("Camp_medicalexamination_save").click();
-}
+
 //case sheet for camp
 public static void casesheet_varightdistanceunaided(String rdua)
 {
-	String full=vaxpath1+probid.getProperty("Camp_casesheet_VA_Right_unaided_distance")+vaxpath2;
+	String full=vaxpath1+probid.getProperty("Sight_casesheet_VA_Right_unaided_distance")+vaxpath2;
 	caseva_dropvalidate(full, rdua, "varightdistanceunaided: ");
 }
 public static void casesheet_varightnearunaided(String rnud)
 {
-	String full=vaxpath1+probid.getProperty("Camp_casesheet_VA_Right_unaided_near")+vaxpath2;
+	String full=vaxpath1+probid.getProperty("Sight_casesheet_VA_Right_unaided_near")+vaxpath2;
 	caseva_dropvalidate(full, rnud, "varightnearunaided: ");	
 }
 public static void casesheet_valeftdistanceunaided(String ldua)
 {
-	String full=vaxpath1+probid.getProperty("Camp_casesheet_VA_Left_unaided_distance")+vaxpath2;
+	String full=vaxpath1+probid.getProperty("Sight_casesheet_VA_Left_unaided_distance")+vaxpath2;
 	caseva_dropvalidate(full, ldua, "valeftdistanceunaided: ");	
 }
 public static void casesheet_valeftnearunaided(String rnud)
 {
-	String full=vaxpath1+probid.getProperty("Camp_casesheet_VA_Left_unaided_near")+vaxpath2;
+	String full=vaxpath1+probid.getProperty("Sight_casesheet_VA_Left_unaided_near")+vaxpath2;
 	caseva_dropvalidate(full, rnud, "valeftnearunaided: ");
 }
 public static void casesheet_varightdistanceaided(String rda)
 {
-	String full=vaxpath1+probid.getProperty("Camp_casesheet_VA_Right_aided_distance")+vaxpath2;
+	String full=vaxpath1+probid.getProperty("Sight_casesheet_VA_Right_aided_distance")+vaxpath2;
 	caseva_dropvalidate(full, rda, "varightdistanceaided: ");
 }
 public static void casesheet_varightnearaided(String rnd)
 {
-	String full=vaxpath1+probid.getProperty("Camp_casesheet_VA_Right_aided_near")+vaxpath2;
+	String full=vaxpath1+probid.getProperty("Sight_casesheet_VA_Right_aided_near")+vaxpath2;
 	caseva_dropvalidate(full, rnd, "varightnearaided: ");
 }
 public static void casesheet_valeftdistanceaided(String lda)
 {
-	String full=vaxpath1+probid.getProperty("Camp_casesheet_VA_Left_aided_distance")+vaxpath2;
+	String full=vaxpath1+probid.getProperty("Sight_casesheet_VA_Left_aided_distance")+vaxpath2;
 	caseva_dropvalidate(full, lda, "valeftdistanceaided: ");
 }
 public static void casesheet_valeftnearaided(String rnd)
 {
-	String full=vaxpath1+probid.getProperty("Camp_casesheet_VA_Left_aided_near")+vaxpath2;
+	String full=vaxpath1+probid.getProperty("Sight_casesheet_VA_Left_aided_near")+vaxpath2;
 	caseva_dropvalidate(full, rnd, "valeftnearaided: ");
 }
 public static void casesheet_varightpinhole(String rightpinhole)
 {
-	String full=vaxpath1+probid.getProperty("Camp_casesheet_VA_Right_pinhole")+vaxpath2;
+	String full=vaxpath1+probid.getProperty("Sight_casesheet_VA_Right_pinhole")+vaxpath2;
 	caseva_dropvalidate(full, rightpinhole, "varightpinhole: ");
 }
 public static void casesheet_valeftpinhole(String leftpinhole)
 {
-	String full=vaxpath1+probid.getProperty("Camp_casesheet_VA_Left_pinhole")+vaxpath2;
+	String full=vaxpath1+probid.getProperty("Sight_casesheet_VA_Left_pinhole")+vaxpath2;
 	caseva_dropvalidate(full, leftpinhole, "valeftpinhole: ");
 }
 public static void casesheet_varightcolour(String rightcolour)
 {
-	String full=vaxpath1+probid.getProperty("Camp_casesheet_VA_Right_Colour")+vaxpath2;
+	String full=vaxpath1+probid.getProperty("Sight_casesheet_VA_Right_Colour")+vaxpath2;
 	caseva_dropvalidate(full, rightcolour, "varightcolour: ");
 }
 public static void casesheet_valeftcolour(String leftcolour)
 {
-	String full=vaxpath1+probid.getProperty("Camp_casesheet_VA_Left_Colour")+vaxpath2;
+	String full=vaxpath1+probid.getProperty("Sight_casesheet_VA_Left_Colour")+vaxpath2;
 	caseva_dropvalidate(full, leftcolour, "valeftcolour: ");
 }
 public static void casesheet_treatrefraction(String refraction)
 {
-	getidlocator("Camp_casesheet_treatment_refraction").click();
+	getidlocator("Sight_casesheet_treatment_refraction").click();
 	dropdown(refraction);
 }
-public static void casesheet_wantrefer(String wantrefer, String referfor, String referto)
+public static void casesheet_wantrefer(String wantrefer, String referfor, String anyother, String referto)
 {
-	radiobutton(getidlocator("Camp_casesheet_wanttorefer_Yes"), getidlocator("Camp_casesheet_wanttorefer_No"), wantrefer, "wantrefer: ");
+	radiobutton(getidlocator("Sight_casesheet_wanttorefer_Yes"), getidlocator("Sight_casesheet_wanttorefer_No"), wantrefer, "wantrefer: ");
 	if(wantrefer.equalsIgnoreCase("yes"))
 	{
-		getidlocator("Camp_casesheet_Referfor").click();
+		getidlocator("Sight_casesheet_Referfor").click();
 		dropdown(referfor);
-		getidlocator("Camp_casesheet_ReferTo").click();
+		if(referfor.equalsIgnoreCase("Any Other"))
+		{
+			getidlocator("Sight_casesheet_Anyother").sendKeys(anyother);
+			hidekey();
+		}
+		getidlocator("Sight_casesheet_ReferTo").click();
 		dropdown(referto);
 	}
 }
 public static void casesheetinfo_save()
 {
-	getidlocator("Camp_casesheet_save").click();
+	getidlocator("Sight_casesheet_save").click();
 }
 
-//Glass prescription for camp
+//Glass prescription for Sight
 public static void Glass_rightdistance_sph(String sph)
 {
 	driver.rotate(ScreenOrientation.LANDSCAPE);
 	if(glassvali(sph))
 	{
-	getidlocator("Camp_Glassprescription_Rightdistance_SPH").sendKeys(sph);
+	getidlocator("Sight_Glassprescription_Rightdistance_SPH").sendKeys(sph);
+	hidekey();
 	}
 }
 public static void Glass_rightdistance_cyl(String cyl)
 {
 	if(glassvali(cyl))
 	{
-	getidlocator("Camp_Glassprescription_Rightdistance_CYL").sendKeys(cyl);
+	getidlocator("Sight_Glassprescription_Rightdistance_CYL").click();
+	getidlocator("Sight_Glassprescription_Rightdistance_CYL").sendKeys(cyl);
+	hidekey();
 	}
 }
 public static void Glass_rightdistance_axis(String axis)
 {
 	if(glassvali(axis))
 	{
-	getidlocator("Camp_Glassprescription_Rightdistance_AXIS").sendKeys(axis);
+	getidlocator("Sight_Glassprescription_Rightdistance_AXIS").click();
+	getidlocator("Sight_Glassprescription_Rightdistance_AXIS").sendKeys(axis);
+	hidekey();
 	}
 }
 public static void Glass_rightdistance_va(String va)
 {
 	if(glassvali(va)) 
 	{
-	getidlocator("Camp_Glassprescription_Rightdistance_V/A").click();
-	scrollbyelementlist(listviewloca, va);
+	driver.findElement(By.xpath("//android.widget.Spinner[@resource-id='Sightsavers.Sightsavers:id/spn_VARightDistanceVA']")).click();
+	scrollbyelementlistland(listviewloca, va);
 	}
 }
 public static void Glass_leftdistance_sph(String sph)
 {
 	if(glassvali(sph))
 	{
-	getidlocator("Camp_Glassprescription_Leftdistance_SPH").sendKeys(sph);
+	getidlocator("Sight_Glassprescription_Leftdistance_SPH").click();
+	getidlocator("Sight_Glassprescription_Leftdistance_SPH").sendKeys(sph);
+	hidekey();
 	}
 }
 public static void Glass_leftdistance_cyl(String cyl)
 {
 	if(glassvali(cyl))
 	{
-	getidlocator("Camp_Glassprescription_Leftdistance_CYL").sendKeys(cyl);
+	getidlocator("Sight_Glassprescription_Leftdistance_CYL").click();
+	getidlocator("Sight_Glassprescription_Leftdistance_CYL").sendKeys(cyl);
+	hidekey();
 	}
 }
 public static void Glass_leftdistance_axis(String axis) throws InterruptedException
 {
 	if(glassvali(axis))
 	{
-	getidlocator("Camp_Glassprescription_Leftdistance_AXIS").sendKeys(axis);
+	getidlocator("Sight_Glassprescription_Leftdistance_AXIS").click();
+	getidlocator("Sight_Glassprescription_Leftdistance_AXIS").sendKeys(axis);
+	hidekey();
 	}
-	/*Thread.sleep(4000);
-	driver.rotate(ScreenOrientation.LANDSCAPE);
-	scrollbyelement(scrollclasswindow, "Prescription of Glass");*/
 }
 public static void Glass_leftdistance_va(String va) throws InterruptedException
 {
-	Thread.sleep(4000);
-	driver.findElement(By.id("txt_GlassLeftVA")).click();
-	JavascriptExecutor js=(JavascriptExecutor)driver;
-	js.executeScript("arguments[0].click();", getidlocator("Camp_Glassprescription_value_Leftdistance"));
-	//getidlocator("Camp_Glassprescription_Leftdistance_V/A").click();
-	scrollbyelementlist(listviewloca, va);
+	if(glassvali(va))
+	{
+	getidlocator("Sight_Glassprescription_Leftdistance_V/A").click();
+	scrollbyelementlistland(listviewloca, va);
+	}
 }
 public static void Glass_rightnear_sph(String sph)
 {
 	if(glassvali(sph))
 	{
-	getidlocator("Camp_Glassprescription_Rightnear_SPH").sendKeys(sph);
+	getidlocator("Sight_Glassprescription_Rightnear_SPH").click();
+	getidlocator("Sight_Glassprescription_Rightnear_SPH").sendKeys(sph);
+	hidekey();
 	}
 }
 public static void Glass_rightnear_cyl(String cyl)
 {
 	if(glassvali(cyl))
 	{
-	getidlocator("Camp_Glassprescription_Rightnear_CYL").sendKeys(cyl);
+	getidlocator("Sight_Glassprescription_Rightnear_CYL").click();
+	getidlocator("Sight_Glassprescription_Rightnear_CYL").sendKeys(cyl);
+	hidekey();
 	}
 }
 public static void Glass_rightnear_axis(String axis)
 {
 	if(glassvali(axis))
 	{
-	getidlocator("Camp_Glassprescription_Rightnear_AXIS").sendKeys(axis);
+	getidlocator("Sight_Glassprescription_Rightnear_AXIS").click();
+	getidlocator("Sight_Glassprescription_Rightnear_AXIS").sendKeys(axis);
+	hidekey();
 	}
 }
 public static void Glass_rightnear_va(String va)
 {
 	if(glassvali(va))
 	{
-	getidlocator("Camp_Glassprescription_Rightnear_V/A").click();
-	scrollbyelementlist(listviewloca, va);
+	getidlocator("Sight_Glassprescription_Rightnear_V/A").click();
+	scrollbyelementlistland(listviewloca, va);
 	}
 }
 public static void Glass_leftnear_sph(String sph)
 {
 	if(glassvali(sph))
 	{
-	getidlocator("Camp_Glassprescription_Leftnear_SPH").sendKeys(sph);
+	getidlocator("Sight_Glassprescription_Leftnear_SPH").click();
+	getidlocator("Sight_Glassprescription_Leftnear_SPH").sendKeys(sph);
+	hidekey();
 	}
 }
 public static void Glass_leftnear_cyl(String cyl)
 {
 	if(glassvali(cyl))
 	{
-	getidlocator("Camp_Glassprescription_Leftnear_CYL").sendKeys(cyl);
+	getidlocator("Sight_Glassprescription_Leftnear_CYL").click();
+	getidlocator("Sight_Glassprescription_Leftnear_CYL").sendKeys(cyl);
+	hidekey();
 	}
 }
 public static void Glass_leftnear_axis(String axis)
 {
 	if(glassvali(axis))
 	{
-	getidlocator("Camp_Glassprescription_Leftnear_AXIS").sendKeys(axis);
+	getidlocator("Sight_Glassprescription_Leftnear_AXIS").click();
+	getidlocator("Sight_Glassprescription_Leftnear_AXIS").sendKeys(axis);
+	hidekey();
 	}
 }
 public static void Glass_leftnear_va(String va)
 {
 	if(glassvali(va))
 	{
-	getidlocator("Camp_Glassprescription_Leftnear_V/A").click();
-	scrollbyelementlist(listviewloca, va);
+	getidlocator("Sight_Glassprescription_Leftnear_V/A").click();
+	scrollbyelementlistland(listviewloca, va);
 	}
 }
 public static void Glass_collectedatcamp(String campcollect, String collectpoint)
 {
-	radiobutton(getidlocator("Camp_Glassprescription_Glass_collectedpoint_Yes"), getidlocator("Camp_Glassprescription_Glass_collectedpoint_No"), campcollect, "collectedatcamp: ");
-	getidlocator("Camp_Glassprescription_Glass_collectedpoint_text").click();
+	radiobutton(getidlocator("Sight_Glassprescription_Glass_collectedpoint_Yes"), getidlocator("Sight_Glassprescription_Glass_collectedpoint_No"), campcollect, "collectedatcamp: ");
+	getidlocator("Sight_Glassprescription_Glass_collectedpoint_text").click();
 	if(campcollect.equalsIgnoreCase("yes"))
 	{
-		String full=vaxpath1+probid.getProperty("Camp_Glassprescription_Glass_Collected_point")+vaxpath2;
+		String full=vaxpath1+probid.getProperty("Sight_Glassprescription_Glass_Collected_point")+vaxpath2;
 		caseva_dropvalidate(full, collectpoint, "campcollect: ");
 	}else if (campcollect.equalsIgnoreCase("no")) {
 		
@@ -663,8 +806,62 @@ public static void Glass_collectedatcamp(String campcollect, String collectpoint
 }
 public static void glassinfo_save()
 {
-	getidlocator("Camp_Glassprescription_Save").click();
+	getidlocator("Sight_Glassprescription_Save").click();
 }
+
+//Multitab Casesheet
+public static void multi_worklistcasesheet() throws IOException
+{
+	idprob();
+	asser=new SoftAssert();
+	WebDriverWait wait1=new WebDriverWait(driver, 35);
+	wait1.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.ImageButton")));
+	driver.findElement(By.className("android.widget.ImageButton")).click();
+	driver.findElement(By.xpath("//android.widget.CheckedTextView[@text='Casesheet']")).click();
+}
+public static void multi_menuworklist()
+{
+	WebDriverWait wait1=new WebDriverWait(driver, 35);
+	wait1.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.ImageButton")));
+	driver.findElement(By.className("android.widget.ImageButton")).click();
+	driver.findElement(By.xpath("//android.widget.CheckedTextView[@text='Worklist']")).click();
+}
+
+public static void multi_casesheet_UID(String UID)
+{
+	getidlocator("Sight_Multi_casesheet_UID").sendKeys(UID);
+	hidekey();
+}
+public static void multi_casesheet_screencode(String screencode)
+{
+	getidlocator("Sight_Multi_casesheet_Screenresponsecode").click();
+	dropdown(screencode);
+}
+public static void multi_casesheet_savescroll()
+{
+	scrollbyelement(scrollclasswindow, "Save");
+}
+
+//Multitab Glass prescription
+public static void multi_worklistglass()
+{
+	WebDriverWait wait1=new WebDriverWait(driver, 35);
+	wait1.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.ImageButton")));
+	driver.findElement(By.className("android.widget.ImageButton")).click();
+	driver.findElement(By.xpath("//android.widget.CheckedTextView[@text='Glass Prescription']")).click();
+}
+public static void multi_glass_UID(String UID)
+{
+	driver.rotate(ScreenOrientation.LANDSCAPE);
+	asser=new SoftAssert();
+	getidlocator("Sight_Multi_Glassprescription_UID").sendKeys(UID);
+	hidekey();
+}
+
+
+
+
+
 
 
 
@@ -682,8 +879,6 @@ public static void idprob() throws IOException
 public static WebElement getidlocator(String ids)
 {
 	return driver.findElement(By.id(probid.getProperty(ids)));
-	//return driver.findElementById(probid.getProperty(id));
-	//return driver.findElement(By.id(probid.getProperty(ids)));
 }
 public static WebElement getclasslocator(String classsin)
 {
@@ -713,6 +908,7 @@ public static void dropdown(String dropvalue)
 }
 public static void radiobutton(WebElement sayyes, WebElement sayno, String inputdata, String name)
 {
+
 	if(inputdata.equalsIgnoreCase("Yes"))
 	{
 		sayyes.click();
@@ -722,6 +918,21 @@ public static void radiobutton(WebElement sayyes, WebElement sayno, String input
 		asser.assertEquals(name+sayno.getAttribute("checked").toString(), name+"true");
 	}
 }
+public static void radiobuttonNA(WebElement sayyes, WebElement sayno, WebElement sayna, String inputdata, String name)
+{
+	if(inputdata.equalsIgnoreCase("Yes"))
+	{
+		sayyes.click();
+		asser.assertEquals(name+sayyes.getAttribute("checked").toString(), name+"true");
+	}else if (inputdata.equalsIgnoreCase("No")) {
+		sayno.click();
+		asser.assertEquals(name+sayno.getAttribute("checked").toString(), name+"true");
+	}else if (inputdata.equalsIgnoreCase("NA")) {
+		sayna.click();
+		asser.assertEquals(name+sayna.getAttribute("checked").toString(), name+"true");
+	}
+}
+
 public static String BMInametext()
 {
 	String text = null;
@@ -748,6 +959,7 @@ public static String BMInametext()
 public static void caseva_dropvalidate(String xpath, String input, String name)
 {
 	String act=driver.findElementByXPath(xpath).getText();
+	System.out.print(act+" ");
 	asser.assertEquals(name+act, name+input);
 }
 public static void scrollbyelement(String scrollwindow, String scrollelement)
@@ -758,11 +970,18 @@ public static void scrollbyelement(String scrollwindow, String scrollelement)
 }
 public static void scrollbyelementlist(String scrollwindow, String scrollelement)
 {
+	String scrollcontain="new UiSelector().className(\""+scrollwindow+"\")";
+	String scrollele="new UiSelector().text(\""+scrollelement+"\")";
+	driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable("+scrollcontain+").scrollIntoView("+scrollele+")")).click();
+}
+public static void scrollbyelementlistland(String scrollwindow, String scrollelement)
+{
 	driver.rotate(ScreenOrientation.LANDSCAPE);
 	String scrollcontain="new UiSelector().className(\""+scrollwindow+"\")";
 	String scrollele="new UiSelector().text(\""+scrollelement+"\")";
 	driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable("+scrollcontain+").scrollIntoView("+scrollele+")")).click();
 }
+
 public static boolean glassvali(String glassvalue)
 {
 	if(glassvalue.equals("-"))
@@ -771,7 +990,13 @@ public static boolean glassvali(String glassvalue)
 	}else
 	{
 		return true;
+	} 
+}
+public static void hidekey()
+{
+	if(driver.isKeyboardShown())
+	{
+		driver.hideKeyboard();
 	}
-	 
 }
 }

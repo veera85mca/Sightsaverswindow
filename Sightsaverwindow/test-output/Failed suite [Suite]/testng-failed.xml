@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Suite]]">
+  <parameter name="patientregis" value="Full patient registration"/>
+  <listeners>
+    <listener class-name="com.pellu.sight.screenshot.Listener"/>
+  </listeners>
+  <test name="Test(failed)(failed)">
+    <classes>
+      <class name="com.pellu.sight.patientinfo.Patienttestcase">
+        <methods>
+          <include name="closereport"/>
+          <include name="patientregistration" invocation-numbers="3 4 5 6 7 8 9 10"/>
+        </methods>
+      </class> <!-- com.pellu.sight.patientinfo.Patienttestcase -->
+    </classes>
+  </test> <!-- Test(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Suite]] -->

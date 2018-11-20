@@ -21,8 +21,9 @@ public class Driverinitialize
 public static AndroidDriver driver=null;
 public static ExtentReports report=null;
 public static ExtentTest log=null;
+public static String reportpath;
 
-public static void initiatedrive() throws MalformedURLException
+public static void initiatedrive(String patientreg) throws MalformedURLException
 {
 	  DesiredCapabilities cap=new DesiredCapabilities();
 	  cap.setCapability("platformName", "Android");
@@ -31,9 +32,18 @@ public static void initiatedrive() throws MalformedURLException
 	  cap.setCapability("appPackage", "Sightsavers.Sightsavers");
 	  cap.setCapability("appActivity", "md52d7fde6ba0664a6789700d1cc1513c89.MainActivity");
 	  driver=new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), cap);
-	  //driver=new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), cap);
 	  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	  //report=new ExtentReports("C:\\Seleniumwork\\workspace\\Campwindowtab\\Patientregistration.html");
-	  report=new ExtentReports(System.getProperty("user.dir")+File.separator+"Patientregreports"+File.separator+"Patientregistration.html");
+	 
+	  reportpath=patientreg;
+	  if(reportpath.equalsIgnoreCase("Full patient registration"))
+	  {
+		  report=new ExtentReports(System.getProperty("user.dir")+File.separator+"Patientregreports"+File.separator+"Patientregistration.html");
+	  }else if (reportpath.equalsIgnoreCase("Patient and screenning")) {
+		  report=new ExtentReports(System.getProperty("user.dir")+File.separator+"Multiregisreports"+File.separator+"Registerscreen.html");
+	  }else if (reportpath.equalsIgnoreCase("Casesheet")) {
+		  report=new ExtentReports(System.getProperty("user.dir")+File.separator+"Multicasereports"+File.separator+"Registerscreen.html");
+	  }else if (reportpath.equalsIgnoreCase("Glass prescription")) {
+		  report=new ExtentReports(System.getProperty("user.dir")+File.separator+"Multiglassreports"+File.separator+"Registerscreen.html");
+	  }
 }	
 }

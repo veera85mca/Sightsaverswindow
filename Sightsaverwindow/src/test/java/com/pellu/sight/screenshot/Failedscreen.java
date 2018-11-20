@@ -16,10 +16,21 @@ import io.appium.java_client.android.Activity;
 
 public class Failedscreen extends Driverinitialize{
 
+public static String imagepath;
+	
 public static String getmyscreen(String dateform) throws IOException
 {
 	File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	String imagepath=System.getProperty("user.dir")+File.separator+"Patientregreports"+File.separator+dateform+".png";
+	if(reportpath.equalsIgnoreCase("Full patient registration"))
+	{
+		imagepath=System.getProperty("user.dir")+File.separator+"Patientregreports"+File.separator+dateform+".png";
+	}else if (reportpath.equalsIgnoreCase("Patient and screenning")) {
+		imagepath=System.getProperty("user.dir")+File.separator+"Multiregisreports"+File.separator+dateform+".png";
+	}else if (reportpath.equalsIgnoreCase("Casesheet")) {
+		imagepath=System.getProperty("user.dir")+File.separator+"Multicasereports"+File.separator+dateform+".png";
+	}else if (reportpath.equalsIgnoreCase("Glass prescription")) {
+		imagepath=System.getProperty("user.dir")+File.separator+"Multiglassreports"+File.separator+dateform+".png";
+	}
 	File des=new File(imagepath);
 	FileUtils.copyFile(src, des);
 	return imagepath;

@@ -101,4 +101,94 @@ public Object[][] patientreg() throws IOException
 	}
 	return data;
 }
+@DataProvider(name="Multiregis")
+public Object[][] multitabreg() throws IOException
+{
+	String value=null;
+	FileInputStream file=new FileInputStream(new File(System.getProperty("user.dir")+File.separator+"Patientinfo"+File.separator+"Patientregis.xlsx"));
+	XSSFWorkbook work=new XSSFWorkbook(file);
+	XSSFSheet sheet=work.getSheet("Reg and Screen");
+	int r=sheet.getLastRowNum();
+	int c=sheet.getRow(0).getLastCellNum();
+	data=new Object[r][1];
+	for(int i=0;i<r;i++)
+	{
+		HashMap<Object, Object> map=new HashMap<Object, Object>();
+		for(int j=0;j<c;j++)
+		{
+			int ce1=sheet.getRow(i+1).getCell(j).getCellType();
+			if(ce1==Cell.CELL_TYPE_STRING)
+			{
+				value=sheet.getRow(i+1).getCell(j).getStringCellValue();
+			}else if (ce1==Cell.CELL_TYPE_NUMERIC) {
+				DataFormatter form=new DataFormatter();
+				Cell cas=sheet.getRow(i+1).getCell(j);
+				value=form.formatCellValue(cas).toString();	
+			}
+			map.put(sheet.getRow(0).getCell(j).toString(), value);
+		}
+		data[i][0]=map;
+	}
+	return data;
+}
+@DataProvider(name="Multicasesheet")
+public Object[][] multitabcasesheet() throws IOException
+{
+	String value=null;
+	FileInputStream file=new FileInputStream(new File(System.getProperty("user.dir")+File.separator+"Patientinfo"+File.separator+"Patientregis.xlsx"));
+	XSSFWorkbook work=new XSSFWorkbook(file);
+	XSSFSheet sheet=work.getSheet("Casesheet");
+	int r=sheet.getLastRowNum();
+	int c=sheet.getRow(0).getLastCellNum();
+	data=new Object[r][1];
+	for(int i=0;i<r;i++)
+	{
+		HashMap<Object, Object> map=new HashMap<Object, Object>();
+		for(int j=0;j<c;j++)
+		{
+			int ce1=sheet.getRow(i+1).getCell(j).getCellType();
+			if(ce1==Cell.CELL_TYPE_STRING)
+			{
+				value=sheet.getRow(i+1).getCell(j).getStringCellValue();
+			}else if (ce1==Cell.CELL_TYPE_NUMERIC) {
+				DataFormatter form=new DataFormatter();
+				Cell cas=sheet.getRow(i+1).getCell(j);
+				value=form.formatCellValue(cas).toString();	
+			}
+			map.put(sheet.getRow(0).getCell(j).toString(), value);
+		}
+		data[i][0]=map;
+	}
+	return data;
+}
+@DataProvider(name="Multiglass")
+public Object[][] multitabglass() throws IOException
+{
+	String value=null;
+	FileInputStream file=new FileInputStream(new File(System.getProperty("user.dir")+File.separator+"Patientinfo"+File.separator+"Patientregis.xlsx"));
+	XSSFWorkbook work=new XSSFWorkbook(file);
+	XSSFSheet sheet=work.getSheet("Glass");
+	int r=sheet.getLastRowNum();
+	int c=sheet.getRow(0).getLastCellNum();
+	data=new Object[r][1];
+	for(int i=0;i<r;i++)
+	{
+		HashMap<Object, Object> map=new HashMap<Object, Object>();
+		for(int j=0;j<c;j++)
+		{
+			int ce1=sheet.getRow(i+1).getCell(j).getCellType();
+			if(ce1==Cell.CELL_TYPE_STRING)
+			{
+				value=sheet.getRow(i+1).getCell(j).getStringCellValue();
+			}else if (ce1==Cell.CELL_TYPE_NUMERIC) {
+				DataFormatter form=new DataFormatter();
+				Cell cas=sheet.getRow(i+1).getCell(j);
+				value=form.formatCellValue(cas).toString();	
+			}
+			map.put(sheet.getRow(0).getCell(j).toString(), value);
+		}
+		data[i][0]=map;
+	}
+	return data;
+}
 }

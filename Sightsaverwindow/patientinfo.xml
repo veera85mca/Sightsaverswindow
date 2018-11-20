@@ -4,9 +4,20 @@
 <listeners>
 <listener class-name="com.pellu.sight.screenshot.Listener"/>
 </listeners>
+<parameter name="patientregis" value="Full patient registration"/>
   <test name="Test">
     <classes>
-      <class name="com.pellu.sight.patientinfo.Patienttestcase"/>
+      <class name="com.pellu.sight.patientinfo.Patienttestcase">
+      <methods>
+      <include name="initialization"/>
+      <include name="login"/>
+      <include name="campdetailscreen"/>
+      <include name="patientregistration"/>
+      <exclude name="multipatientregistration"/>
+      <exclude name="multipatientcasesheet"/>
+      <exclude name="multipatientglass"/>
+      </methods>
+      </class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
